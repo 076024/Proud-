@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=375px, initial-scale=1.0">
+<title>Proud Fine Art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#2C3E50',
+secondary: '#E67E22'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+background-color: #FFFFFF;
+}
+@keyframes colorChange {
+0% { color: #2C3E50; }
+25% { color: #E67E22; }
+50% { color: #3498DB; }
+75% { color: #27AE60; }
+100% { color: #2C3E50; }
+}
+.animate-color {
+animation: colorChange 5s infinite;
+}
+.playfair {
+font-family: 'Playfair Display', serif;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #2C3E50;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.artwork-card {
+transition: transform 0.3s ease;
+}
+.artwork-card:hover {
+transform: translateY(-5px);
+}
+.mobile-menu {
+transform: translateX(100%);
+transition: transform 0.3s ease-in-out;
+}
+.mobile-menu.active {
+transform: translateX(0);
+}
+</style>
+</head>
+<body class="w-[375px] mx-auto min-h-screen">
+<nav class="fixed top-0 w-[375px] bg-white/95 backdrop-blur-sm z-50 px-4 py-3 border-b border-gray-100">
+<div class="flex justify-between items-center">
+<a href="#" class="font-['Pacifico'] text-xl animate-color">PFA</a>
+<div class="hidden md:flex space-x-6">
+<a href="index.html" class="nav-link text-primary hover:text-secondary">Home</a>
+<a href="index.html" class="nav-link text-primary hover:text-secondary">About</a>
+<a href="index.html" class="nav-link text-primary hover:text-secondary">Services</a>
+<a href="index.html" class="nav-link text-primary hover:text-secondary">Contact</a>
+</div>
+<button id="menuBtn" class="md:hidden w-8 h-8 flex items-center justify-center">
+<i class="ri-menu-line text-2xl text-primary"></i>
+</button>
+</div>
+</nav>
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-[375px] h-screen bg-white z-40 p-6">
+<div class="flex justify-end mb-8">
+<button id="closeMenu" class="w-8 h-8 flex items-center justify-center">
+<i class="ri-close-line text-2xl text-primary"></i>
+</button>
+</div>
+<div class="flex flex-col space-y-6">
+<a href="index.html" class="text-lg text-primary hover:text-secondary">Home</a>
+<a href="index.html" class="text-lg text-primary hover:text-secondary">About</a>
+<a href="index.html" class="text-lg text-primary hover:text-secondary">Services</a>
+<a href="contact.html" class="text-lg text-primary hover:text-secondary">Contact</a>
+</div>
+</div>
+<header class="mt-[60px] relative">
+<img src="b.jpg"
+alt="Art Gallery"
+class="w-full h-[300px] object-cover">
+<div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 bg-black/30">
+<h1 class="playfair text-3xl font-bold text-white mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">Proud Fine Art</h1>
+<p class="text-white mb-6 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">Graphic Design & Photography</p>
+<a href="gallery.html">
+<button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
+Explore Gallery
+</button>
+</a>
+</div>
+</header>
+<main class="px-4 py-8">
+<section class="mb-12">
+<h2 class="playfair text-2xl font-semibold text-primary mb-6">Featured Work</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="artwork-card bg-white rounded shadow-sm overflow-hidden">
+<div class="relative">
+<img src="ps.jpg"
+alt="Photography"
+class="w-full h-40 object-cover">
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<h3 class="playfair font-medium text-white text-lg drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">Professional Photography</h3>
+</div>
+</div>
+<div class="p-3">
+<p class="text-xs text-gray-600">Studio & Location Shoots</p>
+</div>
+</div>
+<div class="artwork-card bg-white rounded shadow-sm overflow-hidden">
+<img src="f.jpg"
+alt="Graphic Design"
+class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="playfair font-medium text-sm">Creative Design</h3>
+<p class="text-xs text-gray-600">Brand & Digital Solutions</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<h2 class="playfair text-2xl font-semibold text-primary mb-6">Our Services</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center mb-3">
+<i class="ri-camera-line text-2xl text-primary"></i>
+</div>
+<h3 class="playfair font-medium mb-2">Photography</h3>
+<p class="text-xs text-gray-600">Professional photography services for all occasions</p>
+</div>
+<div class="p-4 bg-white rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center mb-3">
+<i class="ri-pencil-ruler-2-line text-2xl text-primary"></i>
+</div>
+<h3 class="playfair font-medium mb-2">Graphic Design</h3>
+<p class="text-xs text-gray-600">Creative design solutions for your brand</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-primary text-white px-4 py-8">
+<div class="mb-8">
+<h3 class="font-['Pacifico'] text-xl mb-4 animate-color">PFA</h3>
+<p class="text-sm text-white/80">Where art meets passion</p>
+</div>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div>
+<h4 class="font-medium mb-3">Visit Us</h4>
+<p class="text-sm text-white/80">Kamwala South<br>Goldcrest Mall, Lusaka</p>
+</div>
+<div>
+<h4 class="font-medium mb-3">Contact</h4>
+<p class="text-sm text-white/80">+260 966 206 628<br>+260 974 533 992</p>
+</div>
+</div>
+<div class="flex justify-center space-x-4 mb-6">
+<a href="https://wa.me/+260 966 206 628" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20">
+<i class="ri-whatsapp-line"></i>
+</a>
+<a href="https://www.facebook.com/profile.php?id=61574169594672" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20">
+<i class="ri-facebook-line"></i>
+</a>
+</div>
+<div class="text-center text-sm text-white/60">
+<p>&copy; 2025 Jackson Siame. All rights reserved.
+</p>
+</div>
+</footer>
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const closeMenu = document.getElementById('closeMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => {
+mobileMenu.classList.add('active');
+});
+closeMenu.addEventListener('click', () => {
+mobileMenu.classList.remove('active');
+});
+</script>
+</body>
+</html>
